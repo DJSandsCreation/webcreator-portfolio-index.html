@@ -1,0 +1,279 @@
+/* CSS style sheet working top to bottom */
+
+body{
+
+    font: 15px/1.5 Arial, Helvetica, sans-serif;
+    
+    padding: 0;
+    margin: 0;
+    background-color:#f4f4f4;
+}
+
+/* Global */
+.header .a {
+    width: 10px;
+}
+.container {
+    /* using % to make it more responsive */
+    width: 80%;
+    /* to align to middle not left*/
+    margin: auto;
+    /* if something goes outside of div, dont want scroll bar,content = it is hidden */
+    overflow: hidden;
+}
+
+ul {
+    /* by default ul have padding */
+    margin: 0;
+    padding: 0;
+    /* with this all uls will have  0 for padding & margins set as default*/
+}
+
+/* style buttons */
+.button_1{
+    height: 38px;
+    background-color: #e8491d;
+    /* by default buttons have borders */
+    border: 0;
+    padding-left: 20px;
+    padding-right: 20px;
+    color: #f4f4f4;
+}
+
+/* style, global, class of dark p- sidebar? */
+.dark{
+    padding: 15px;
+    background-color: #35424a;
+    color: #ffffff;
+    margin-top: 10px;
+    margin-bottom: 10px;
+
+}
+
+/* Header */
+header{
+    background: #080808;
+    color: #f8f7ee;
+    padding-top: 30px;
+    /* height - min-height, so height can adjust and respond */
+    min-height: 70px;
+    border-bottom: #e7dddd 20px solid;
+}
+
+#logo1 {   
+width: 200px;  
+}
+
+/* header's link tags */
+header a {
+    color: #ffffff;
+    /* remove underline which is default for links */
+    text-decoration: none;
+    /* for menu to be uppercase */
+    text-transform: uppercase;
+    font-size: 16px;
+}
+
+/* targeting li specifcally */
+header li {
+    float:left;
+    display: inline;
+    /* padding to affect right/left - top right bottom left */
+    padding: 80px 20px 0 20px;
+}
+
+/* spaces - div branding to go to the left /the nav div to go to the right*/
+header #branding{
+    float: left;
+    
+}
+
+#logo img{
+    max-height: 800px;
+    max-width: 800px;
+    padding-right: 50%;
+}
+
+header #branding h1{
+    margin: 0;
+}
+
+header nav{
+    float: right;
+    /* move nav down a bit */
+    margin-top: 10px;
+}
+
+header .highlight, header .current a {
+    color: #f0eae8;
+    font-weight: bold;
+/* in html wrapped <h1><span>DJSandsCreation</span></h1> in span */
+}
+
+/* hover state for menu */
+header a:hover{
+    color: #cccccc;
+    font-weight: bold;
+}
+
+/* showcase */
+#showcase{
+    /* min- ... flexible, responsive */
+    min-height: 400px;
+    /* below was as advised however did not show image, therefore MDN advised background-image: url(img/showcase.jpg); */
+    /*background-image:url('img/showcase.jpg') no-repeat 0 -400px;*/
+    background-image: url(img/simp1.jpg);
+    
+    background-size: cover;
+    text-align: center;  
+    color: #f5e7e7;
+}
+
+
+/* h1 for showcase, move down 7 para bigger text*/
+#showcase h1{
+    margin-top: 10px;
+    font-size: 55px;
+    margin-bottom: 10px;
+}
+
+#showcase p{
+    font-size: 20px;
+}
+
+/* newsletter */
+
+#newsletter {
+    padding: 15px;
+    color: #ffffff;
+    background-color: #35424a;
+}
+
+/* float h1 to left and float form to the right */
+#newsletter h1{
+    float: left;
+}
+
+#newsletter form{
+    float: right;
+    /* down alittle, margin */
+    margin-top: 15px;
+}
+
+/* style input, bigger */
+#newsletter input[type="email"]{
+    /* css3 - input[type="email"] */
+    padding: 4px;
+    height: 25px;
+    width: 250px;
+}
+
+/* boxes */
+#boxes {
+    margin-top: 20px;
+}
+
+/* individual boxes */
+#boxes .box{
+    float: left;
+    width: 40%;
+    height: 40%;
+    padding: 10px;
+}
+
+
+/* images */
+#boxes .box img{
+    width: 400px;
+
+}
+
+/* about page sidebar, aside#sidebar has to be together or it doesnt work */
+aside#sidebar{
+    float: right;
+    width: 30%;
+    margin-top: 10px;
+    
+}
+
+/* quote form */
+aside#sidebar .quote input, aside#sidebar .quote input textarea{
+    width: 90%;
+    padding: 5px;
+}
+
+/* article, main col */
+article#main-col{
+    float:left;
+    width: 65%;
+}
+
+/* services, form quote */
+ul#services li {
+list-style: none;
+padding: 20px;
+border: #cccccc solid 1px;
+margin-bottom: 5px;
+background-color: #e6e6e6;
+}
+
+footer{
+    padding: 20px;
+    margin-top: 20px;
+    color: #f3ecec;
+    background-color: #0e0d0d;
+    text-align: center;
+}
+
+/*media queries - makes site more responsive on all devices/ viewpoints */
+@media(max-width: 768px){
+    /*tablet screen size approx 768 px  */
+    /* body{
+        display: none;
+        /* to test set body display to none when go past 768px */
+    /*} */
+
+    /* need to remove floats, eg nav when smaller  need it to stack isteand of float, so below */
+
+    header #branding,
+    header nav,
+    header nav li,
+    /*newsletter floats*/
+    #newsletter h1,
+    #logo img,
+    #newsletter form ,
+     /* boxes on index*/
+     #boxes .box,
+     /* about page, articles, sidebar*/
+     article#main-col,
+     aside#sidebar {
+          
+        float: none;
+        text-align: center;
+        width: 100%;
+    }
+
+    /*header needs space underneath*/
+    header{
+        padding-bottom: 20px;
+    }
+ 
+    /* too much space with showcase*/
+    #showcase h1 {
+        margin-top: 40px;
+    }
+    /*newsletter button as needs to be seperated from display*/
+
+    #newsletter button, quote button{
+        display:block;
+        width: 100%;
+    }
+
+    #newsletter form input[type='email'], .quote input, .quote textarea{
+        width:100%;
+     /* move button away with margin*/   
+        margin-bottom: 5px;
+    }
+    
+    /* boxes on index*/
+}
